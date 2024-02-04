@@ -18,7 +18,14 @@ const reviewSchema = new mongoose.Schema({
 
 const Reviews = mongoose.model('reviews', reviewSchema);
 
-app.use(cors({ origin: '*' }));
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
+  
+app.use(cors(corsOptions));
 
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
