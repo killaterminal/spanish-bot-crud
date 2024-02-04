@@ -60,6 +60,8 @@ app.post('/add', (req, res) => {
                     }
 
                     file.buffer = resizedBuffer;
+                } else{
+                    file.buffer = 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Error-logo.png';
                 }
 
             const newItem = new Reviews({
@@ -68,7 +70,7 @@ app.post('/add', (req, res) => {
             });
 
             await newItem.save();
-            res.json({ fileUrl: `/uploads/${btoa(String.fromCharCode.apply(null, new Uint8Array(newItem.file.data)))}` });
+            // res.json({ fileUrl: `/uploads/${btoa(String.fromCharCode.apply(null, new Uint8Array(newItem.file.data)))}` });
         }
         else{
             console.log("Error: File missing!")
