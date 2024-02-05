@@ -8,7 +8,7 @@ function App() {
   const [text, setText] = useState(null);
 
   async function fetchItems() {
-    const response = await fetch('http://localhost:3000/items');
+    const response = await fetch('https://kind-rose-termite.cyclic.app/items');
     const items = await response.json();
     setData(items);
   };
@@ -22,7 +22,7 @@ function App() {
     formData.append('file', file);
     console.log(file);
     try {
-      const response = await fetch('http://localhost:3000/add', {
+      const response = await fetch('https://kind-rose-termite.cyclic.app/add', {
         method: 'POST',
         body: formData,
       });
@@ -41,7 +41,7 @@ function App() {
 
   async function deleteReview(id) {
     try {
-      const response = await fetch(`http://localhost:3000/delete/${id}`, {
+      const response = await fetch(`https://kind-rose-termite.cyclic.app/delete/${id}`, {
         method: 'DELETE',
       });
 
