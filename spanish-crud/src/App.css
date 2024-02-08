@@ -50,6 +50,7 @@
 .container-photos{
   display: flex;
   gap: 5px;
+  flex-wrap: wrap; 
 }
 
 .container-content{
@@ -60,9 +61,36 @@
   align-items: center;
   background-color: rgb(118, 132, 145);
   border-radius: 20px;
+  width: 400px;
 }
 
 .photo{
   width: auto;
-  height: 400px;
+  height: 350px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #5a5a5a;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.button-row {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
 }
